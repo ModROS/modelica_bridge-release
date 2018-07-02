@@ -1,15 +1,15 @@
 /**
  * @brief ModBridge class and node
  * @file modbridge_node.cpp
- * @author Shashank Swaminathan <sh.swami235@gmail.com>
+ * 
  * Node for connecting Modelica to ROS via a tcp/ip interface.
- */
-/*
- * Copyright 2018 Shashank Swaminathan.
- *
- * This file is part of the ModBridge package and subject to the license terms
+ * 
+ * This file is part of the modelica_bridge package and subject to the license terms
  * in the top-level LICENSE file of the modelica_bridge repository.
  * https://github.com/ModROS/modelica_bridge/blob/master/LICENSE
+ * 
+ * Copyright 2018
+ * @author Shashank Swaminathan <sh.swami235@gmail.com>
  */
 
 #include <ros/ros.h>
@@ -27,10 +27,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-/*! @def MAX_BUF
+/** @def MAX_BUF
     @brief Defines the maximum length of the character buffer
 */
-/*! @def MAX_ARRAY
+/** @def MAX_ARRAY
     @brief Defines the maximum size of internal buffer arrays
 */
 #define MAX_BUF 1024 // define maximum length of character buffer
@@ -61,6 +61,8 @@ class ModBridge
     private:
         /**
          * Callback for receiving controller values.
+         * Reads from topic /control_values. 
+         * Stores data into array of size MAX_ARRAY - only reads MAX_ARRAY amount of array slots.
          * @param[in] inVal ModComm message holding controller values.
          * @return none
          */
@@ -139,7 +141,7 @@ ModBridge::ModBridge()
 
 void ModBridge::spin() 
 {
-    ros::Rate loop(20);
+    ros::Rate loop(update_rate_);
 
     while(ros::ok())
     {

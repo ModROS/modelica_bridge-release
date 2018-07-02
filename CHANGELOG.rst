@@ -1,6 +1,16 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Changelog for package modelica_bridge
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+0.1.1 (2018-07-02)
+------------------
+* Edited package description
+* Updated documentation
+* Edited README.md
+* Edited documentation for modelica_bridge
+* Edited <depend> tags in package.xml
+* Added install target for modbridge node
+* Edited documentation for modelica_bridge
+
 0.1.0 (2018-06-30)
 ------------------
 * Added link to online documentation of modelica_bridge
